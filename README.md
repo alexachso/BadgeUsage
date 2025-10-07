@@ -17,3 +17,7 @@ Thank you!
 
 # Usage of demo
 Click on "Click Me" button to make the buttons non-available.
+
+# Bonus
+Not at all related to the badge problem. Updating to the latest MDIX, I observed that with every Combobox I add to my UI it comes with a binding error now. I have added one in here to.
+The binding error is : "System.Windows.Data Error: 5 : Value produced by BindingExpression is not valid for target property. null BindingExpression:Path=(0); DataItem='ComboBox' (Name=''); target element is 'ComboBox' (Name=''); target property is 'Name' (type 'String')"
