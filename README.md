@@ -1,48 +1,19 @@
-# WPF app template
-This template creates a full WPF application, along with unit tests.
+# Repository Overview
 
-## Template
-Create a new app in your current directory by running.
+This repository contains a small demo showcasing a UI behavior scenario.
 
-```cli
-> dotnet new keboo.wpf
-```
+I’ve added several buttons to the interface. Depending on certain conditions, some buttons can be interacted with, while others cannot. When a button is disabled, I wanted to give users a clear explanation of why it’s unavailable.
 
-### Parameters
-[Default template options](https://learn.microsoft.com/dotnet/core/tools/dotnet-new#options)
+To do this, I wrapped each button inside a Badge control. When interaction is not allowed, a badge is displayed along with a tooltip text describing the reason.
 
-## Key Features
+In some cases, the same rule applies to multiple buttons. To keep things consistent, I decided to reuse the same badge and tooltip string across them — so the user sees a unified explanation.
 
-### Generic Host Dependency Injection
-[Docs](https://learn.microsoft.com/dotnet/core/extensions/generic-host?tabs=appbuilder&WT.mc_id=DT-MVP-5003472)
+However, when I tried binding the same PackIcon instance to multiple badges in XAML, I noticed that only the first button’s badge displayed the icon correctly. The others showed no icon at all.
 
-### Centralized Package Management
-[Docs](https://learn.microsoft.com/nuget/consume-packages/Central-Package-Management?WT.mc_id=DT-MVP-5003472)
+I’m wondering if this behavior is related to object instancing, or if there’s something else I’m missing. I’d really appreciate any feedback or explanation about why this happens!
 
-### Build Customization
-[Docs](https://learn.microsoft.com/visualstudio/msbuild/customize-by-directory?view=vs-2022&WT.mc_id=DT-MVP-5003472)
+Feel free to review it or even go over it on stream — I don’t mind at all 🙂
+Thank you!
 
-### CommunityToolkit MVVM
-[Docs](https://learn.microsoft.com/dotnet/communitytoolkit/mvvm/?WT.mc_id=DT-MVP-5003472)
-
-### Material Design in XAML
-[Repo](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit)
-
-### .editorconfig formatting
-[Docs](https://learn.microsoft.com/dotnet/fundamentals/code-analysis/code-style-rule-options?WT.mc_id=DT-MVP-5003472)
-
-### Testing with Moq.AutoMocker
-[Repo](https://github.com/moq/Moq.AutoMocker)
-
-### NuGet package source mapping
-[Docs](https://learn.microsoft.com/nuget/consume-packages/package-source-mapping?WT.mc_id=DT-MVP-5003472)
-
-### Dependabot auto updating of dependencies
-[Docs](https://docs.github.com/code-security/dependabot/dependabot-version-updates)
-Auto merging of these PRs done with [fastify/github-action-merge-dependabot](https://github.com/fastify/github-action-merge-dependabot).
-
-### GitHub Actions workflow with code coverage reporting
-[Docs](https://docs.github.com/actions).
-Code coverage provided by [coverlet-coverage/coverlet](https://github.com/coverlet-coverage/coverlet).
-Code coverage report provided by [danielpalme/ReportGenerator-GitHub-Action](https://github.com/danielpalme/ReportGenerator-GitHub-Action).
-The coverage reports are posted as "stciky" PR comments provided by [marocchino/sticky-pull-request-comment](https://github.com/marocchino/sticky-pull-request-comment)
+# Usage of demo
+Click on "Click Me" button to make the buttons non-available.
